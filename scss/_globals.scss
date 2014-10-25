@@ -1,0 +1,67 @@
+/* 
+Globals
+	Sass variable, mixins, plugins, etc. that are used throughout the entore site.
+*/
+
+// Function for converting a px based font-size to rem.
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return #{$remSize}rem;
+}
+
+// Mixin that will include the fall back px declaration as well as the calculated rem value.
+@mixin fontSize($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
+
+@font-face {
+  font-family: 'Duru Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Duru Sans'), local('DuruSans-Regular'), url(http://fonts.gstatic.com/s/durusans/v8/0rnIdjSQWlqFS5KpKzVfzoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: 'Patrick Hand SC';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Patrick Hand SC'), local('PatrickHandSC-Regular'), url(http://fonts.gstatic.com/s/patrickhandsc/v4/OYFWCgfCR-7uHIovjUZXsTZGjj7KJDhimUAc2zufEgE.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: 'Raleway Dots';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway Dots'), local('RalewayDots-Regular'), url(http://fonts.gstatic.com/s/ralewaydots/v4/lhLgmWCRcyz-QXo8LCzTfBVuXpl7XtNjpLlhhhGlVqc.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+
+@mixin body-font-regular {
+    font-family: 'Duru Sans', serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+@mixin body-font-bold {
+    font-family: 'Patrick Hand SC', serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+@mixin headline-font {
+    font-family: 'Raleway Dots', sans-serif;
+    font-style: bold; 
+    font-weight: 4700; 
+}
+
+
+@mixin reversed-text {
+    background-color: $color;
+    color: $background-color;
+}
+
+// Site variable
+$color: #242424;
+$background-color: #b5b5b5;
